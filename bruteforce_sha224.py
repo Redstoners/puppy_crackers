@@ -1,12 +1,8 @@
 from itertools import product
-import msvcrt as m
 import md5
 import sys
 import time
 import hashlib
-
-def wait():
-	m.getch()
 
 chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(){}[]:;\|<>/?+=_-"
 print("")
@@ -31,6 +27,5 @@ for length in range(1, 21):
 			print(end - start)
 			print("Seconds")
 			print("")
-			print("Press a button to continue")
-			wait()
+			raw_input("Press Enter to terminate.")
 			sys.exit()

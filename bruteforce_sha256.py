@@ -31,6 +31,5 @@ for length in range(1, 21):
 			print(end - start)
 			print("Seconds")
 			print("")
-			print("Press a button to continue")
 			raw_input("Press Enter to terminate.")
 			sys.exit()
