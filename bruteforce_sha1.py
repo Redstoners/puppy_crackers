@@ -3,6 +3,7 @@ import msvcrt as m
 import md5
 import sys
 import time
+import hashlib
 
 def wait():
 	m.getch()
@@ -16,8 +17,12 @@ start = time.time()
 for length in range(1, 21):
 	to_attempt = product(chars, repeat=length)
 	for attempt in to_attempt:
-		#print("".join(attempt))
-		if hash == md5.md5("".join(attempt)).hexdigest():
+		attempt10 = "".join(attempt)
+		hash_objectsha1 = hashlib.sha1(attempt10)
+		hex_digsha1 = hash_objectsha1.hexdigest()
+		#print(attempt10)
+		#print(hex_digsha1)
+		if hash == hex_digsha1:
 			print("Found it!")
 			print("")
 			print("".join(attempt))
